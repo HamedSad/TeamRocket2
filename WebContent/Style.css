@@ -1,0 +1,383 @@
+@charset "ISO-8859-1";
+
+
+/*   Page connexion  */
+.wrapp{
+    background-color: rgb(250, 235, 218);
+}
+
+p{
+    text-align:center;
+}
+
+h1{
+    text-align: center;
+}
+
+hr{
+    color: grey;
+    margin-bottom: 3em;
+ 
+}
+
+.header{
+    background-image: url(http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg);
+    background-size: cover;
+    height: 20em; 
+    display: flex;
+    justify-content: space-around; 
+    align-content: center; 
+}
+@media screen and (max-width: 600px) {
+.header{
+    height: 10em; 
+    }            
+}
+
+
+
+/*   Formulaire inscription  */
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.pseudo {
+    margin: 1rem 0;
+}
+
+.password {
+    margin: 1rem 0;
+}
+
+.confirmation {
+    margin: 1rem 0;
+}
+.email {
+    margin: 1rem 0;
+}
+label {
+    font-size: .8rem;
+}
+input:invalid + span:after {
+    content: 'x';
+    color: red;
+    padding-left: 5px;
+}
+
+input:valid + span:after {
+    content: 'ok';
+    color: #26b72b;
+    padding-left: 5px;
+}
+
+.messageErreur {
+	color: red;
+}
+
+/*   partie2  */
+
+.partie2{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 3em;   
+}
+
+@media screen and (max-width: 800px) {
+    .partie2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    }
+}
+
+.logo{
+    margin: 2em;
+}
+.logo img{
+    margin-left: 18vw; 
+    height: 10em; 
+}
+
+.inscription{
+    margin:2em;
+}
+
+.icones{
+    display: flex;
+    justify-content: space-around; 
+}
+
+@media screen and (max-width: 550px) {
+    .icones{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icone1{
+    padding-bottom:5em;    
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icone2{
+    padding-bottom:5em;    
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icone3{
+    padding-bottom:5em;    
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icone4{
+    padding-bottom:5em;    
+    }
+}
+
+.icones img{
+    width: 10em;
+    height: 10em;
+}
+
+
+@media screen and (max-width: 750px) {
+    .icones img{
+    width: 8em;
+    height: 8em;    
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icones img{
+    width: 15em;
+    height: 15em;    
+    text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .icones h3{
+        font-size:20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .icones h3{
+        font-size:20px;
+    }
+}
+
+.créer{
+    padding-top: 2em;
+  }
+
+@media screen and (max-width: 750px) {
+    .créer h1{
+        font-size:25px;
+    }
+}
+
+.partie3{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+.fun{
+    padding-top: 2em;
+    padding-bottom: 2em;  
+}
+
+@media screen and (max-width: 600px) {
+.fun h1{
+    font-size: 20px;
+    text-align: center;
+    }            
+}
+
+/*   Footer  */
+
+.footer{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    
+}
+
+@media screen and (max-width: 600px) {
+.centragefooter{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:1em;
+    padding-top:1em;
+    text-align: center;
+    }            
+}
+
+@media screen and (max-width: 600px) {
+.liens{
+    
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2em;
+    padding-top: 2em;
+    text-align: center;
+    }            
+}
+
+@media screen and (max-width: 600px) {
+.liens h4{
+    font-size: 20px;
+    text-align: center;
+    }            
+}
+
+
+@media screen and (max-width: 600px) {
+.newsletter{
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+    }            
+}
+
+.centragefooter{
+    display: flex;
+    justify-content: space-around; 
+}
+
+.liens p{
+    font-size:20px;
+}
+
+.liens img{
+  width: 2em;
+  height: 2em;
+  margin-right:1em;
+}
+
+.newsletter p{
+    font-size: 20px;
+}
+
+.infos{
+    text-align: center;
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+p.infos{
+    font-size: 5px;
+}
+
+
+/*   Page evenement  */
+
+.headcreation{
+    background-image: url(http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg);
+    background-size: cover;
+    height: 30em; 
+    display: flex;
+    justify-content: space-around; 
+    align-content: center; 
+}
+
+.titrecreation{
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    
+}
+
+.creationformulaire{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.illustration{
+    border: red solid;
+    width: 30em;
+    height: 20em;
+}
+
+/* Partie responsive evenement */
+
+@media screen and (max-width: 800px) {
+    .creationformulaire{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formulaire{
+    padding-bottom: 2em;
+    padding-top: 2em;
+    }
+}
+
+/* Page AffichageEvenement */
+
+.wrapp{
+    background-color: #faebda;
+}
+
+.headlisteevenements{
+    background-image: url(http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg);
+    background-size: cover;
+    height: 30em; 
+    display: flex;
+    justify-content: space-around; 
+    align-content: center; 
+}
+
+.titrelisteevenements{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    text-align: center;
+}
+
+.listeevenements{
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 5em;
+}
+
+.card{
+
+    padding-right: 1em;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+.card p {
+	text-align: center;
+}
+
+.card h5 {
+	text-align: center;
+}
