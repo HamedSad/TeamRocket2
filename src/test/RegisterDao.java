@@ -25,6 +25,7 @@ public class RegisterDao {
 			ps.setString(1, user.getPseudo());
 			ps.setString(2, user.getPassword());
 			ps.setString(3, user.getEmail());
+			
 			ps.executeUpdate();
 			
 
@@ -33,4 +34,4 @@ public class RegisterDao {
 
 		}
 	}
-}
+ }

@@ -6,8 +6,17 @@
     background-color: rgb(250, 235, 218);
 }
 
+.slider{
+	
+}
+
 p{
     text-align:center;
+}
+
+.pageprincipale p{
+	font-size: 15px;
+	color: white;
 }
 
 h1{
@@ -23,18 +32,16 @@ hr{
 .header{
     background-image: url(http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg);
     background-size: cover;
-    height: 20em; 
+    height: 15em; 
     display: flex;
     justify-content: space-around; 
     align-content: center; 
 }
 @media screen and (max-width: 600px) {
 .header{
-    height: 10em; 
+    height: 15em; 
     }            
 }
-
-
 
 /*   Formulaire inscription  */
 
@@ -50,6 +57,7 @@ legend {
 
 .pseudo {
     margin: 1rem 0;
+    
 }
 
 .password {
@@ -81,7 +89,18 @@ input:valid + span:after {
 	color: red;
 }
 
+.inscription{
+	text-align:center;
+	font-family: roboto;
+	font-size: 20px;
+}
+
 /*   partie2  */
+
+.logo p{
+	font-size: 20px;
+	font-family: roboto;
+}
 
 .partie2{
     display:flex;
@@ -103,8 +122,8 @@ input:valid + span:after {
     margin: 2em;
 }
 .logo img{
-    margin-left: 18vw; 
-    height: 10em; 
+    margin-left: 2vw; 
+    height: 18em; 
 }
 
 .inscription{
@@ -215,6 +234,8 @@ input:valid + span:after {
 .footer{
     padding-top: 2em;
     padding-bottom: 2em;
+    background-color : white;
+    color: grey;
     
 }
 
@@ -368,10 +389,20 @@ p.infos{
 }
 
 .card{
-
-    padding-right: 1em;
     margin-left: 2em;
-    margin-top: 2em;
+    margin-top: 2em;  
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 3px grey;
+}
+
+@media screen and (max-width: 600px) {
+.card:hover{
+    transform: none;
+    box-shadow: none;
+    }            
 }
 
 .card p {

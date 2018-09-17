@@ -1,5 +1,7 @@
 package test;
 
+import java.sql.Time;
+
 public class BeanEvent {
 		
 		int id;
@@ -7,12 +9,16 @@ public class BeanEvent {
 		String dateEve;
 		String createur;
 		String lieu;
+		int capMax;
+		int nbreInscrits;
+		String duree;
+		Time heureDebut;
 		double montantObjectif;
 		double montantActuel;
 		String typeEve;
 		String textEve;
-		int capMax;
-		int nbreInscrits;
+		String image;
+		
 		
 		
 		public int getId() {
@@ -45,6 +51,30 @@ public class BeanEvent {
 		public void setLieu(String lieu) {
 			this.lieu = lieu;
 		}
+		public int getCapMax() {
+			return capMax;
+		}
+		public void setCapMax(int capMax) {
+			this.capMax = capMax;
+		}
+		public int getNbreInscrits() {
+			return nbreInscrits;
+		}
+		public void setNbreInscrits(int nbreInscrits) {
+			this.nbreInscrits = nbreInscrits;
+		}
+		public String getDuree() {
+			return duree;
+		}
+		public void setDuree(String duree) {
+			this.duree = duree;
+		}
+		public Time getHeureDebut() {
+			return heureDebut;
+		}
+		public void setHeureDebut(Time heureDebut) {
+			this.heureDebut = heureDebut;
+		}
 		public double getMontantObjectif() {
 			return montantObjectif;
 		}
@@ -69,19 +99,12 @@ public class BeanEvent {
 		public void setTextEve(String textEve) {
 			this.textEve = textEve;
 		}
-		public int getCapMax() {
-			return capMax;
+		public String getImage() {
+			return image;
 		}
-		public void setCapMax(int capMax) {
-			this.capMax = capMax;
+		public void setImage(String image) {
+			this.image = image;
 		}
-		public int getNbreInscrits() {
-			return nbreInscrits;
-		}
-		public void setNbreInscrits(int nbreInscrits) {
-			this.nbreInscrits = nbreInscrits;
-		}
-		
-		
+
 		
 }

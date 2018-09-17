@@ -7,9 +7,8 @@ public class LoginBDD {
 
 	private static Connection con = null;
 
-	public static Connection createConnection()
-
-	{
+	public static Connection createConnection() {
+		
 		if (con != null)
 			return con;
 		else {
@@ -23,29 +22,20 @@ public class LoginBDD {
 				try {
 
 					Class.forName("com.mysql.jdbc.Driver"); // loading mysql driver
-				}
-
-				catch (ClassNotFoundException e)
-
-				{
+				
+				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
-
 				}
 
 				con = DriverManager.getConnection(url, username, password); // attempting to connect to MySQL database
 
 				System.out.println("Printing connection object " + con);
 
-			}
-
-			catch (Exception e)
-
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			return con;
-
 		}
 	}
 }

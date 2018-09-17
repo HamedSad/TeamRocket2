@@ -27,18 +27,20 @@
               <div class="header"> 
                   
                 <div class="rocket">
-                    <img src="Images/logo.png" width="100" height="70" align="left">
+                   <img src="Images/logo.png" width="100" height="70" align="left">
+                    
+                    
                 </div>
                 
                 <div class="pageprincipale" align="right">
-                        <form action="EvenementsAffichage.jsp">
-		                    Pseudo <input type="text" name="pseudo" size="26"><br><br>
-                            Mot de passe <input type="password" name="mdp"><br><br>
+                        <form action="LoginUserLet"  method = "post">
+		                    <p> <input type="text" name="pseudo" required minlength="6" maxlength="100" placeholder="Pseudo"></p><br>
+                            <p><input type="password" name="mdp" required minlength="8" maxlength="100" placeholder="Mot de passe "></p><br>
                             <input type="submit" value="Se connecter!">
+                            <p>${errorConnexion}</p>
 		                </form>
                 </div>
                 
-            
              </div>
                                   
                 <div class="partie2"> 
@@ -46,10 +48,43 @@
                     <div class="logo">
                         
                         <h1>Qu'est ce que Rocket! ?</h1><br>
-                        <p>Rocket est une <strong>plateforme communautaire </strong> permettant de mettre en relation des <strong>créateurs d'évenements</strong> avec des dizaines de participants</p>
-                        <p>En plus, ils peuvent même t'aider sous forme de dons totalement <strong>solidaires et sécurisés</strong></p>
-                        <p><strong>C'est simple, rapide et 100% gratuit</strong></p>
-                        <img src="https://image.noelshack.com/fichiers/2018/37/2/1536654166-logo.png">
+                        <p>Rocket est une <strong>plateforme communautaire </strong> permettant de mettre en relation des <strong>créateurs d'événements</strong> avec des dizaines de participants</p>
+                        <p>Ils peuvent même t'aider sous forme de dons totalement <strong>solidaires et sécurisés</strong></p>
+                        <p><strong>C'est simple, rapide et 100% gratuit !</strong></p><br><br>
+                        
+                        
+                            <div class="slider">      
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3" class="active"></li>
+          </ol>
+            
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png"  alt="first slide"><p>Musical</p></div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png" alt="second slide"><p>Sport</p></div>        
+        <div class="carousel-item">         
+          <img class="d-block w-100" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png"  alt="third slide"><p>Familial</p></div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png" alt="Fourth slide"><p>Geek</p></div>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div> 
+    
                     </div>
                     
                     <div class="inscription">            
@@ -77,7 +112,7 @@
                                                 <label for="uname"></label>
                                                 <input type="password" id="uname" name="mdp2" required
                                                        minlength="8" maxlength="100"
-                                                       placeholder="Confirmation" />
+                                                       placeholder="Confirme ton mot de passe" />
                                                 <span class="validity"></span>
                                                 
                                             </div>
@@ -101,22 +136,22 @@
                     </div>
                     
                 </div>
-            
-            	<hr>
-            
+                
+                <hr>
+                
                 <div class="créer">
                     <h1>Comment créer mon événement?</h1>
                     <br><br>
-                    <div class="icones">
+                    
+                </div>
+                
+                   <div class="icones">
                         <div class="icone1"><img src="http://www.learnenjoy.com/wp-content/uploads/2016/06/V7_5-Icone-Calendrier.png" alt="Logo création"><br><br><br><h3>1. Je crée mon<br> événement</h3></div>
                         <div class="icone2"><img src="https://cdn.icon-icons.com/icons2/510/PNG/512/ios7-people_icon-icons.com_50207.png" alt="logo participants"><br><br><br><h3>2. Je fixe mes<br> participants</h3></div>
                         <div class="icone3"><img src="http://download.seaicons.com/icons/iconsmind/outline/512/Mail-Money-icon.png" alt="Logo cagnotte"><br><br><br><h3>3. Je configure<br> ma cagnotte</h3></div>
                         <div class="icone4"><img src="https://cdn.iconscout.com/icon/free/png-512/checked-box-460353.png" alt="Logo valide"><br><br><br><h3>4. Je fixe MON<br> événement</h3></div>
-                    </div>
-                    
-                </div>
+                   </div>
 
-            
                 <div class="partie3">
                   <img class="card-img" src="http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg" alt="Card image">
                 </div>
@@ -134,18 +169,19 @@
                     </div>
                 
                 <hr>
+                
                 <div class="fun">
                     <h1>Et c'est parti pour le fun!</h1>
                 </div>
              
                 <div class="type">
-                    <img class="card-img-top" src="http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg" alt="Image Concert">
+                    <img class="card-img-top" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png" alt="Image Concert">
                 </div>
             
                 <div class="footer">
                     <div class="centragefooter">
                         <div class="liens">
-                            <p><strong>Reste connecté sur les réseaux</strong></p><br>
+                            <p><strong>Reste connecté.e sur les réseaux</strong></p><br>
                         <div class="iconesfooter">
                           <h4><a href="https://www.facebook.com" target="_blank"><img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19761.png" alt="Logo facebook"></a>
                           <a href="https://www.snapchat.com" target="_blank"><img src="https://focussnapeat.com/wp-content/uploads/2016/06/snapcodes.png" alt="logo Snapchat"></a>
@@ -156,7 +192,7 @@
                         <div class="newsletter">
                             <form action="NewsletterLet" method = "post">
                                 <p><strong>Pour t'inscrire à la newsletter</strong></p><br>    
-                                <p>Email<input type="text" name="email"></p>
+                                <p>Email <input type="text" name="email"></p>
                                 <p><input type="submit" value="Je m'inscris!"></p>
                             </form>
                             <p>${confirmNewsletter}</p>

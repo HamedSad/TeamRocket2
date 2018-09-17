@@ -11,28 +11,21 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class RegisterLet
  */
 @WebServlet(description = "servlet associée à Register.jsp", urlPatterns = { "/RegisterLet" })
+
 public class RegisterLet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public RegisterLet() {
         super();
-        // TODO Auto-generated constructor stub
+  
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
@@ -42,8 +35,8 @@ public class RegisterLet extends HttpServlet {
 		String pwd2 = request.getParameter("mdp2");
 		String em = request.getParameter("email");
 		
-		if (pwd.equals(pwd2))
-		{		
+		if (pwd.equals(pwd2)) {
+			
 		BeanUser user = new BeanUser();
 		
 		user.setPseudo(psd);
@@ -54,7 +47,8 @@ public class RegisterLet extends HttpServlet {
 		
 		inscription.register(user);
 		
-		
+		request.setAttribute("validationInscription", "Tu es désormais inscrit.e");
+		request.setAttribute("affichagePseudo", psd);
 		this.getServletContext().getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
 		}
 		

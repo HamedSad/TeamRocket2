@@ -2,10 +2,18 @@ package test;
 
 public class BeanUser {
 	
+	int idUser;
 	String pseudo;
 	String email;
 	String password;
 	
+	
+	public int getIdUser() {
+		return idUser;
+	}
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
 	public String getPseudo() {
 		return pseudo;
 	}
@@ -24,5 +32,7 @@ public class BeanUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+
 
 }

@@ -23,7 +23,7 @@
                 <header>
                 
                 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Rocket!    |   Créateur d'événements</a>
+                        <a class="navbar-brand" href="#">Rocket!| ${affichagePseudo} ${affichagePseudoConnexion}</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -55,9 +55,14 @@
                     </nav>
                 </header> 
                 
+                <p>${validationInscription}</p>
+                <p>${bienvenuePseudo}</p>
+                
                 <div class="titrelisteevenements">
                     <h1>Nos prochains événements</h1>
                 </div>
+                
+                <p>${ConfirmationCreationEvenement}</p>
                 
                 <div class="listeevenements">
                     
@@ -70,7 +75,7 @@
                               <p class="card-text" name="lieu">Ville</p>
                             </div>
                             <div class="card-footer">
-                              <small class="text-muted">Places disponibles </small>
+                              <small class="text-muted" name="placesdispo">Places disponibles </small>
                             </div>
                           </div>
                         
@@ -178,10 +183,10 @@
                 <div class="footer">
                  <div class="centragefooter">
                      <div class="liens">
-                         <p><strong>Reste connecté sur les réseaux</strong></p><br>
+                         <p><strong>Reste connecté.e sur les réseaux</strong></p><br>
                      <div class="iconesfooter">
                        <h4><a href="https://www.facebook.com" target="_blank"><img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19761.png" alt="Logo facebook"></a>
-                       <a href="https://www.linkedin.com" target="_blank"><img src="https://focussnapeat.com/wp-content/uploads/2016/06/snapcodes.png" alt="logo Snapchat"></a>
+                       <a href="https://www.snapchat.com" target="_blank"><img src="https://focussnapeat.com/wp-content/uploads/2016/06/snapcodes.png" alt="logo Snapchat"></a>
                        <a href="https://www.twitter.com" target="_blank"><img src="https://www.unet.cz/blog/wp-content/uploads/2017/11/Twitter_logo00.png" alt="Logo twitter"></a>
                            <a href="https://www.instagram.com" target="-blank"><img src="https://blog.opennemas.com/media/blog/images/2017/11/21/2017112117323379600.png" alt="Logo insta"></a></h4>
                      </div>
@@ -196,6 +201,7 @@
                      </div>
                  </div>
                  <div class="infos">
+                 
                      <p>Contact  | Conditions générales d'utilisation  |  Qui sommes-nous? 
                      <br><br>Rocket! 2018 Tous droits réservés</p>
                  </div>
