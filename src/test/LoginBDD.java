@@ -22,7 +22,7 @@ public class LoginBDD {
 				try {
 
 					Class.forName("com.mysql.jdbc.Driver"); // loading mysql driver
-				
+				System.out.println("connexion ok");
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				}

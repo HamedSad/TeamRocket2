@@ -1,26 +1,25 @@
 package test;
 
 import java.sql.Time;
+import java.util.Date;
 
 public class BeanEvent {
 		
 		int id;
 		String titre;
-		String dateEve;
+		Date dateEve;
 		String createur;
 		String lieu;
 		int capMax;
 		int nbreInscrits;
 		String duree;
-		Time heureDebut;
+		String heureDebut;
 		double montantObjectif;
 		double montantActuel;
 		String typeEve;
 		String textEve;
 		String image;
-		
-		
-		
+		String accesHandicap;
 		public int getId() {
 			return id;
 		}
@@ -33,10 +32,10 @@ public class BeanEvent {
 		public void setTitre(String titre) {
 			this.titre = titre;
 		}
-		public String getDateEve() {
+		public Date getDateEve() {
 			return dateEve;
 		}
-		public void setDateEve(String dateEve) {
+		public void setDateEve(Date dateEve) {
 			this.dateEve = dateEve;
 		}
 		public String getCreateur() {
@@ -69,10 +68,10 @@ public class BeanEvent {
 		public void setDuree(String duree) {
 			this.duree = duree;
 		}
-		public Time getHeureDebut() {
+		public String getHeureDebut() {
 			return heureDebut;
 		}
-		public void setHeureDebut(Time heureDebut) {
+		public void setHeureDebut(String heureDebut) {
 			this.heureDebut = heureDebut;
 		}
 		public double getMontantObjectif() {
@@ -105,6 +104,11 @@ public class BeanEvent {
 		public void setImage(String image) {
 			this.image = image;
 		}
-
+		public String getAccesHandicap() {
+			return accesHandicap;
+		}
+		public void setAccesHandicap(String accesHandicap) {
+			this.accesHandicap = accesHandicap;
+		}
 		
 }

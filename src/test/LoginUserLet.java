@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 @WebServlet("/LoginUserLet")
 
@@ -14,22 +18,14 @@ public class LoginUserLet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public LoginUserLet() {
-
 		super();
-
-	}
-	
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
-		
+
 		String pseudo = request.getParameter("pseudo");
 		String password = request.getParameter("mdp");
-
 		BeanUser user = new BeanUser();
 
 		user.setPseudo(pseudo);
@@ -37,20 +33,25 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 		LoginUserDao logTry = new LoginUserDao();
 
-		String essai = logTry.connectionUser(user);
+		int essai = logTry.fetchIdUser(user);
 
-		if (essai.equals("logged")) {
+		if (essai != 0) {
 
-			request.setAttribute("affichagePseudoConnexion", pseudo);
-			this.getServletContext().getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
+			HttpSession userLog = request.getSession();
+			
+			userLog.setAttribute("idUser", essai);
+			userLog.setAttribute("pseudo", pseudo);
+
+			EventCrudDao affichageEvents = new EventCrudDao();
+
+			request.setAttribute("events", affichageEvents.allEvents());
+			request.getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
 
 		} else {
 
-			request.setAttribute("errorConnexion", "Identifiants incorrects...Essayez à nouveau.");
-			this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+			request.setAttribute("error", "Identifiants incorrects...Essayez à nouveau.");
+			request.getRequestDispatcher("/Register.jsp").forward(request, response);
 
 		}
-
 	}
-
 }

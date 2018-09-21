@@ -10,36 +10,30 @@ import java.sql.SQLException;
 
 public class LoginUserDao {
 
-	public String connectionUser(BeanUser user) {
-		String retourLog = "";
+	public int fetchIdUser(BeanUser user) {
 
 		Connection con = null;
 
-		ResultSet result = null; // je crée des variables String qui vont contenir les attributs de mon model
-									// String ps = user.getPseudo();
+		ResultSet result = null;
+		String ps = user.getPseudo();
 
 		String mp = user.getPassword();
-		String ps = user.getPseudo();
+
+		int userIdLog = 0;
 		try {
 
 			con = LoginBDD.createConnection();
-
-			PreparedStatement st = con.prepareStatement("SELECT pseudo FROM register WHERE pseudo =? AND pwd=?");
-
+			PreparedStatement st = con.prepareStatement("SELECT idUser FROM register WHERE pseudo =? AND pwd=?");
 			st.setString(1, ps);
+
 			st.setString(2, mp);
-			
+
 			result = st.getResultSet();
 
 			result = st.executeQuery();
-			
-			if (result.next()) {
+			while (result.next()) {
 
-				retourLog = "logged";
-
-			} else {
-
-				retourLog = "error";
+				userIdLog = result.getInt("idUser");
 
 			}
 		} catch (SQLException e) {
@@ -47,7 +41,7 @@ public class LoginUserDao {
 			e.printStackTrace();
 		}
 
-		return retourLog;
+		return userIdLog;
 	}
 
 }

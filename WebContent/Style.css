@@ -6,10 +6,6 @@
     background-color: rgb(250, 235, 218);
 }
 
-.slider{
-	
-}
-
 p{
     text-align:center;
 }
@@ -21,12 +17,12 @@ p{
 
 h1{
     text-align: center;
+    color: grey;
 }
 
 hr{
     color: grey;
     margin-bottom: 3em;
- 
 }
 
 .header{
@@ -118,6 +114,44 @@ input:valid + span:after {
     }
 }
 
+@media screen and (max-width: 800px){
+    .card{
+    margin-top: 1em;
+    }
+}
+
+.card{
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-img-top{
+    height: 15em;
+}
+
+@media screen and (max-width: 800px){
+    .card{
+    margin-top: 1em;
+    }
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 3px grey;
+}
+
+@media screen and (max-width: 700px) {
+.card:hover{
+    transform: none;
+    box-shadow: none;
+    }            
+}
+
+.card-img-top{
+    height: 15em;
+}
+
 .logo{
     margin: 2em;
 }
@@ -129,6 +163,15 @@ input:valid + span:after {
 .inscription{
     margin:2em;
 }
+
+#inscription2{
+	text-align:center;
+}
+
+.bouton{
+	border: solid black;
+}
+
 
 .icones{
     display: flex;
@@ -376,6 +419,7 @@ p.infos{
     align-content: center; 
 }
 
+
 .titrelisteevenements{
     padding-top: 3em;
     padding-bottom: 3em;
@@ -386,11 +430,6 @@ p.infos{
     margin-left: 2em;
     margin-right: 2em;
     margin-bottom: 5em;
-}
-
-.card{
-    margin-left: 2em;
-    margin-top: 2em;  
 }
 
 .card:hover {
@@ -411,4 +450,132 @@ p.infos{
 
 .card h5 {
 	text-align: center;
+}
+
+
+<!-- Inscription Evenement  -->
+
+
+
+.form-group {
+    display: flex;
+    width: 500px;
+    margin-left: 20px;
+    
+}
+
+.form-group2 {
+    display: flex;
+    width: 150px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    
+}
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+}
+
+#body {
+    background-color: #FAEBDA;
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;  
+}
+
+.right {
+    float: right;
+    
+}
+
+
+
+
+
+/* footer  */
+
+.footer{
+    padding-top: 5em;
+    padding-bottom: 2em;
+    background-color: rgb(250, 235, 218);
+}
+
+@media screen and (max-width: 600px) {
+.centragefooter{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:1em;
+    padding-top:1em;
+    text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+.newsletter{
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.liens{
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2em;
+    padding-top: 2em;
+    text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+.liens p{
+    font-size: 20px;
+    text-align: center;
+    }
+}
+
+
+.icones{
+    display: flex;
+    justify-content: space-around; 
+}
+
+.icones img{
+    width: 18em;
+    height: 18em;
+}
+
+.centragefooter{
+    display: flex;
+    justify-content: space-around; 
+}
+
+
+.liens img{
+  width: 2em;
+  height: 2em;
+  margin-right:1em;
+}
+
+.infos{
+    text-align: center;
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+p.infos{
+    font-size: 5px;
 }

@@ -15,6 +15,7 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="print.css" media="print">
+            <link rel="icon" type="image/png" href="http://image.noelshack.com/fichiers/2018/38/5/1537535762-logo.png" />
             <title>Evénement</title>
         </head>
           <body>
@@ -50,8 +51,6 @@
                     </div>
                     </nav>
                 	
-                    <nav class="headlisteevenements">
-                    </nav>
                 </header>
               
             <div class="titrecreation">    
@@ -61,52 +60,67 @@
             <div class="creationformulaire">
                 
                 <div class="formulaire">
-                <form action="CreationEvenementLet" method = "post">
+                <form action="CreationEventsLet" method = "post">
                        <div class="titre">
-                            <label for="uname"></label>
-                            <input type="text" id="uname" name="titre" style="width: 340px"
+                            <input type="text" required id="uname" name="titre" style="width: 340px"
                             placeholder="Titre"/><br><br>
                         </div>
+                        
+                        <select name="type" required placeholder="type event" style="width: 340px">
+                        	<option value="" disabled selected>Selectionne le type</option>
+            				<option value="Musique">Musique</option>
+            				<option value="Meet up">Meet up</option>
+            				<option value="Hackathon">Hackathon</option>
+            				<option value="Atelier coworking">Atelier coworking</option>
+            				<option value="Sport">Sport</option>
+        				</select> <br>
                     
-                       <div class="date">
-                            <label for="uname"></label>
+                       <br><div class="date">
                             <input type="date" id="uname" name="date" style="width: 340px"
                             placeholder="Date"/><br><br>
                         </div> 
-                    
-                       <div class="lieu">
-                            <label for="uname"></label>
-                            <input type="text" id="uname" name="lieu" style="width: 340px" placeholder="Lieu"/><br><br>
+                        
+                        <div class="heureDebut">
+                            <input type="text" required id="uname" name="heureDebut" style="width: 340px" placeholder="Heure de début"/><br><br>
                         </div>
                         
+                    
+                       <div class="lieu">
+                            <input type="text" required id="uname" name="lieu" style="width: 340px" placeholder="Lieu"/><br><br>
+                        </div>
+                        
+                        <div class="Duree">
+                            <input type="text" required id="uname" name="duree" style="width: 340px" placeholder="Durée approximative"/><br><br>
+                        </div>                        
+                        
                         <div class="nombreparticipants">
-                            <label for="uname"></label>
-                            <input type="text" id="uname" name="capacite" style="width: 340px" placeholder="Nombre de participants"/><br><br>
+                            <input type="text" required id="uname" name="capacite" style="width: 340px" placeholder="Nombre de participants"/><br><br>
                         </div>
                         
                         <div class="montant">
-                            <label for="uname"></label>
-                            <input type="text" id="uname" name="montant" style="width: 340px" placeholder="Montant souhaité"/><br><br>
+                            <input type="text" required id="uname" name="montant" style="width: 340px" placeholder="Montant souhaité"/><br><br>
                         </div>
                         
                         <div class="description">
-                            <label for="uname"></label>
-                            <textarea name="descriptionEve" cols="50" rows="10">Description</textarea><br><br>
+                            <textarea name="textEve" required cols="42" rows="10"  placehoder = "Description"></textarea><br><br>
                         </div>
                         
                         <div class="handicape">
-                            <input type="checkbox" id="uname" name="uname">
+                            <input type="checkbox" id="uname" name="accesHandicape" value="oui" checked/>
                             <label for="uname">Accès handicapé</label>  
                         </div>
+                        
                         <input type="submit" style="background-color: #ff5c39" class="btn" value="Créer">
+                        
+                        <div class="image">
+                            <input type="text" id="uname" name="urlImage" style="width: 340px" placeholder="Url de l'image"/><br><br>
+                    	</div>
                 </form>
                 </div>
                 
                 <div class="illustration">
                     <img src="" alt="Card image">
-                    
-                </div>
-        
+                </div>   
             </div>
         
             <hr>
@@ -119,7 +133,7 @@
                        <h4><a href="https://www.facebook.com" target="_blank"><img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19761.png" alt="Logo facebook"></a>
                        <a href="https://www.linkedin.com" target="_blank"><img src="https://focussnapeat.com/wp-content/uploads/2016/06/snapcodes.png" alt="logo Snapchat"></a>
                        <a href="https://www.twitter.com" target="_blank"><img src="https://www.unet.cz/blog/wp-content/uploads/2017/11/Twitter_logo00.png" alt="Logo twitter"></a>
-                           <a href="https://www.instagram.com" target="-blank"><img src="https://blog.opennemas.com/media/blog/images/2017/11/21/2017112117323379600.png" alt="Logo insta"></a></h4>
+                       <a href="https://www.instagram.com" target="-blank"><img src="https://blog.opennemas.com/media/blog/images/2017/11/21/2017112117323379600.png" alt="Logo insta"></a></h4>
                      </div>
                      </div>
                      <div class="newsletter">
