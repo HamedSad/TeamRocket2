@@ -36,10 +36,11 @@
 </head>
 
 <body>
+
 	<div class="wrapp">
 		<header> <nav
 			class="navbar navbar-expand-lg navbar-light bg-light"> <a
-			class="navbar-brand" href="#">Rocket! | Créateur d'événements</a>
+			class="navbar-brand" href="#">Rocket! | ${pseudo}</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -52,7 +53,7 @@
 				<li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
 
 				<li class="nav-item"><a class="nav-link"
-					href="EvenementsAffichage.jsp">Nos événements</a></li>
+					href="ListeEvenements.jsp">Nos événements</a></li>
 
 				<li class="nav-item"><a class="nav-link"
 					href="CreationEvenement.jsp">Créer un événement</a></li>
@@ -77,37 +78,11 @@
 			<p>${ConfirmationCreationEvenement}</p>
 		</div>
 <!-- 
-		<div class="centrage">
-		<c:forEach items="${events}" var="event">
-				<div class="card">
-					<h5 class="card-title" name="titre">
-						<c:out value="${event.getTitre()}" />
-					</h5>
-					<img class="card-img-top" src=<c:out value= "${event.getImage()}"/> alt="Card image cap">
-					
-					<div class="card-body">
-						<p class="card-text" name="date"> <c:out value="${event.getDateEve()}" />
-						</p>
-						<p class="card-text" name="lieu">
-							<c:out value="${event.getLieu()}" />
-						</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted"><c:out
-								value="${event.getCapMax() - event.getNbreInscrits()}" />
-						</small>
-					</div>
-					</c:forEach>
-				</div>		
-		</div>
-		
 
-
--->
 		<div class="listeevenements">
 
 			<div class="card-deck">
-				<!-- < items="${events}" var="event"> -->
+	
 				<div class="card">
 					<h5 class="card-title" name="titre">
 						<c:out value="${events.get(0).getTitre()}" />
@@ -129,7 +104,6 @@
 						</small>
 					</div>
 				</div>
-				<!--   </> -->
 
 				<div class="card">
 					<h5 class="card-title">
@@ -281,6 +255,7 @@
 								value="${events.get(7).getCapMax() - events.get(7).getNbreInscrits()}" /></small>
 					</div>
 				</div>
+				
 				<div class="card">
 					<h5 class="card-title">
 						<c:out value="${events.get(8).getTitre()}" />
@@ -302,6 +277,36 @@
 				</div>
 			</div>
 
+		</div>
+		
+		-->
+		
+			<div class="centrageimage">
+			
+				<c:forEach items="${events}" var="event">
+				<div class="card" style="width: 20rem">
+					<h5 class="card-title" name="titre">
+						<c:out value="${event.getTitre()}" />
+					</h5>
+					<img class="card-img-top" src=<c:out value= "${event.getImage()}"/> alt="Card image cap">
+					
+					<div class="card-body">
+						<p class="card-text" name="date"> <c:out value="${event.getDateEve()}" />
+						</p>
+						<p class="card-text" name="lieu">
+							<c:out value="${event.getLieu()}" />
+						</p>
+					</div>
+					<div class="card-footer">
+						<small class="text-muted"><c:out value="${event.getCapMax() - event.getNbreInscrits()}" /></small>
+					</div>
+					</div>
+				</c:forEach>
+				
+				
+			</div>	
+			
+				
 		</div>
 
 		<div class="footer">

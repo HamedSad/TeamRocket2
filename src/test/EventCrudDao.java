@@ -26,7 +26,7 @@ public class EventCrudDao {
             PreparedStatement preparedStatement = connection
             		
             .prepareStatement("insert into evenement"
-                    + "(titre,typeEve, lieu, capaciteMax, montantObjectif, textEve, accesHandicape, urlImage, duree, heureDebut) values (?, ?, ?, ?,"
+                    + "(titre,typeEve, lieu, capaciteMax, montantObjectif, textEve, accesHandicape, urlImage, duree, heureDebut)  values (?, ?, ?, ?,"
                     + " ?, ?, ?, ?, ?, ?)");
                         
             preparedStatement.setString(1, event.getTitre());
@@ -108,7 +108,7 @@ public class EventCrudDao {
     public List<BeanEvent> allEvents() {
 
         List<BeanEvent> events = new ArrayList<BeanEvent>();
-        System.out.println("ortogrzoig");
+        System.out.println("récuperation des données");
 
         try {
 
@@ -137,7 +137,8 @@ public class EventCrudDao {
                 event.setAccesHandicap(rs.getString("accesHandicape"));
                                 
                 events.add(event);
-
+                
+                System.out.println("données récupérées");
             }
 
         } catch (SQLException e) {

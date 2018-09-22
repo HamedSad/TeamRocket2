@@ -45,6 +45,7 @@ public class LoginUserLet extends HttpServlet {
 			EventCrudDao affichageEvents = new EventCrudDao();
 
 			request.setAttribute("events", affichageEvents.allEvents());
+			request.setAttribute("pseudo", pseudo);
 			request.getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
 
 		} else {

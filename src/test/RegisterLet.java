@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet(description = "servlet associée à Register.jsp", urlPatterns = { "/RegisterLet" })
 
 public class RegisterLet extends HttpServlet {
@@ -64,7 +65,6 @@ public class RegisterLet extends HttpServlet {
 				
 			} else {
 				inscription.register(user);
-				request.setAttribute("validationInscription", psd);
 				request.setAttribute("events", affichageEvents.allEvents());
 				this.getServletContext().getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
 				

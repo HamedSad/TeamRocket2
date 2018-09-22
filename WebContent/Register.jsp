@@ -60,15 +60,13 @@
 
 		</div>
 
-		<a href="ListeEvenements.jsp">Liste des evenements</a>
-
 		<div class="partie2">
 
 			<div class="logo">
-				<h1>Boost tes événements avec Rocket!</h1><br>
-				<p>Rocket t'aide à <strong>promouvoir tes événements</strong> en temettant en relation avec des dizaines de participants</p>
+				<h1>Booste tes événements avec Rocket!</h1><br>
+				<p>Rocket t'aide à <strong>promouvoir tes événements</strong> en te mettant en relation avec des dizaines de participants</p>
 				<p>En plus, les participants peuvent t'aider sous forme de dons <strong>solidaires et sécurisés</strong></p>
-				<p><strong>C'est simple, rapide et 100% gratuit !</strong></p><br><br>
+				<p><strong>C'est simple, rapide et 100% gratuit !</strong></p><br>
 			</div>
 		</div>
 		
@@ -82,7 +80,7 @@
               </div>
             </div>
                     
-            <div class="card text-center" text-center style="width: 20rem">
+            <div class="card text-center" style="width: 20rem">
              <img class="card-img-top" src="http://image.noelshack.com/fichiers/2018/37/5/1536923783-banniere.png" alt="Image2">
               <div class="card-body">
                 <h5 class="card-title">Sport</h5>
