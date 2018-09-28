@@ -1,0 +1,153 @@
+@charset "ISO-8859-1";
+
+.wrapp{
+    background-color: #faebda;
+}
+
+.headlisteevenements{
+    background-image: url(http://mjcloreillecassee.com/home/wp-content/uploads/2017/05/Banniere-Fete-de-la-MJC-site-OKC.jpg);
+    background-size: cover;
+    height: 20em; 
+    display: flex;
+    justify-content: space-around; 
+    align-content: center; 
+}
+
+@media screen and (max-width: 600px) {
+.headlisteevenements{
+    height: 10em; 
+    }            
+}
+
+.titreevenement h1{
+    text-align: center;
+    margin-top: 3em;
+}
+
+.lieudate{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 3em;
+    margin-bottom 5em;
+}
+
+@media screen and (max-width: 600px) {
+.lieudate{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2em;
+    padding-top: 2em;
+    padding-left: 5em;
+    padding-right:5em;
+    text-align: center;
+    }            
+}
+
+.photoevenement{
+    background-image: url("https://image.noelshack.com/fichiers/2018/37/2/1536654166-logo.png");
+    margin: 0 auto;
+    width: 30em;
+    height: 20em;
+    border: red solid;
+}
+
+.descriptionevenement{
+    text-align: center;
+    margin-top: 8em;
+    margin-right: 15em;
+    margin-left: 15em;
+    margin-bottom: 5em;
+    border: red solid
+}
+
+@media screen and (max-width: 800px) {
+.descriptionevenement{
+    margin-top: 5em;
+    margin-right: 0em;
+    margin-bottom: 5em;
+    margin-left: 0em;
+    text-align: center;
+    }            
+}
+
+
+
+/* footer  */
+
+.footer{
+    padding-top: 5em;
+    padding-bottom: 2em;
+    background-color: rgb(250, 235, 218);
+}
+
+@media screen and (max-width: 600px) {
+.centragefooter{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:1em;
+    padding-top:1em;
+    text-align: center;
+    }            
+}
+
+
+@media screen and (max-width: 600px) {
+.newsletter{
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+    }            
+}
+
+@media screen and (max-width: 600px) {
+.liens{
+    
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2em;
+    padding-top: 2em;
+    text-align: center;
+    }            
+}
+
+@media screen and (max-width: 600px) {
+.liens p{
+    font-size: 20px;
+    text-align: center;
+    }            
+}
+
+
+.icones{
+    display: flex;
+    justify-content: space-around; 
+}
+
+.icones img{
+    width: 18em;
+    height: 18em;
+}
+
+.centragefooter{
+    display: flex;
+    justify-content: space-around; 
+}
+
+
+.liens img{
+  width: 2em;
+  height: 2em;
+  margin-right:1em;
+}
+
+.infos{
+    text-align: center;
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+p.infos{
+    font-size: 5px;
+}

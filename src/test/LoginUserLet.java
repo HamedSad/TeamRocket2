@@ -20,6 +20,11 @@ public class LoginUserLet extends HttpServlet {
 	public LoginUserLet() {
 		super();
 	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+			throws ServletException, IOException {
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -50,7 +55,7 @@ public class LoginUserLet extends HttpServlet {
 
 		} else {
 
-			request.setAttribute("error", "Identifiants incorrects...Essayez à nouveau.");
+		request.setAttribute("error", "Mot de passe ou identifiant incorrect ... Essayez à nouveau.");
 			request.getRequestDispatcher("/Register.jsp").forward(request, response);
 
 		}

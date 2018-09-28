@@ -6,6 +6,7 @@ import java.util.Date;
 public class BeanEvent {
 		
 		int id;
+		int idUser;
 		String titre;
 		Date dateEve;
 		String createur;
@@ -14,18 +15,32 @@ public class BeanEvent {
 		int nbreInscrits;
 		String duree;
 		String heureDebut;
+		int placesRestantes;
 		double montantObjectif;
 		double montantActuel;
 		String typeEve;
 		String textEve;
 		String image;
 		String accesHandicap;
+		
+		public int getIdUser() {
+			return idUser;
+		}
+		public void setIdUser(int idUser) {
+			this.idUser = idUser;
+		}
 		public int getId() {
 			return id;
 		}
 		public void setId(int id) {
 			this.id = id;
 		}
+		
+		public int getPlacesRestantes() {
+		placesRestantes = 	getCapMax() - getNbreInscrits();
+			return placesRestantes;
+		}
+		
 		public String getTitre() {
 			return titre;
 		}
@@ -110,5 +125,6 @@ public class BeanEvent {
 		public void setAccesHandicap(String accesHandicap) {
 			this.accesHandicap = accesHandicap;
 		}
+		
 		
 }

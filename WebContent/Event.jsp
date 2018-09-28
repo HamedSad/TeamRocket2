@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -31,60 +30,57 @@
 	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="print.css" media="print">
-<link rel="icon" type="image/png"
-	href="http://image.noelshack.com/fichiers/2018/38/5/1537535762-logo.png" />
 <title>Nos prochains événements</title>
 </head>
-
 <body>
 
 	<jsp:include page="HeaderFile.jsp"></jsp:include>
-
 	<div class="wrapp">
 
 
 
-		<div class="titrelisteevenements">
-			<h1>Nos prochains événements</h1>
+		<div class="titreevenement" name="titre">
+			<h1>${event.getTitre()}</h1>
 		</div>
 
-		<div class="centrageimage">
+		<div class="entete">
 
-			<c:forEach items="${events}" var="event">
-				<div class="card" style="width: 20rem">
-					<h5 class="card-title" name="titre">
-						<c:out value="${event.getTitre()}" />
+			<div class="date">
+				<h5 name="date" value="">Date: ${event.getDateEve()}</h5>
+			</div>
 
-					</h5>
-					<img class="card-img-top" src=<c:out value= "${event.getImage()}"/>
-						alt="Card image cap">
+			<div class="lieu">
+				<h5 name="lieu" value="">Ville: ${event.getLieu()}</h5>
+			</div>
+			
+			<div class="heure">
+				<h5 name="heureDebut">Heure : ${event.getHeureDebut()}</h5>
+			</div>
 
-					<div class="card-body">
-						<p class="card-text" name="date">
-							<c:out value="${event.getDateEve()}" />
-						</p>
-						<p class="card-text" name="lieu">
-							<c:out value="${event.getLieu()}" />
-						<form action="EventLet" method="post">
-							<input type="hidden" name="idEventPass" value="${event.getId()}" />
-							<p>
-								<button type="submit" style="background-color: #ff5c39"
-									class="btn" value="">En savoir plus</button>
-							</p>
-						</form>
-						</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">Places restantes : <c:out
-								value="${event.getCapMax() - event.getNbreInscrits()}" /></small>
-					</div>
+			<div class="duree">
+				<h5>Durée: ${event.getDuree()}</h5>
+			</div>
 
-				</div>
-			</c:forEach>
+		</div>
+
+		<div class="photoevenement"> <img src=${event.getImage()}></div>
+
+		<div class="description">
+			<p>${event.getTextEve()}</p>
+		</div>
+
+		<div id="bouton">
+			<br> <br>
+			<p>
+			<input type="button" style="background-color: #ff5c39" style="width: 130px" value="Je m'inscris" />
+			<input type="button"  style="background-color: #ff5c39" style="width: 160px" value="Ajouter à mes favoris"/>
+			<input type="button"  style="background-color: #ff5c39" style="width: 160px" value="Effacer l'événement"/>
+			</p>
 		</div>
 
 	</div>
-	<jsp:include page="Footer.jsp"></jsp:include>
 
+	<jsp:include page="Footer.jsp"></jsp:include>
 </body>
+
 </html>

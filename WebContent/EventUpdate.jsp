@@ -20,28 +20,28 @@
         </head>
           <body>
           
-           	<jsp:include page="HeaderFile.jsp"></jsp:include>
-          
+          	<jsp:include page="HeaderFile.jsp"></jsp:include>
+          	
             <div class="wrapp">
-                
-
+ 			
               
             <div class="titrecreation">    
                 <h1>Création d'un événement</h1>
             </div>
-                 <h1>${ConfirmationCreationEvent}</h1>                
+                
             <div class="creationformulaire">
                 
                 <div class="formulaire">
-                <form action="CreationEventsLet" method = "post">
+                <form action="UpdateEventsLet2" method = "post">
                 	<table>
-                       <div class="titre">
-                            <input type="text" required id="uname" name="titre" style="width: 340px"
+                       <div class="titre" >
+                            <input type="text" value="${eventUp.getTitre()}" required id="uname" name="titre" style="width: 340px"
                             placeholder="Titre"/><br><br>
                         </div>
                         
-                        <select name="typeEve" required placeholder="type event" style="width: 340px">
-                        	<option value="" disabled selected>Selectionne le type</option>
+                        <select name="typeEve"  required placeholder="type event" style="width: 340px">
+                        <option value="${eventUp.getTypeEve()}" selected ></option>
+                        	<option value="" disabled >Selectionne le type</option>
             				<option value="Musique">Musique</option>
             				<option value="Meet up">Meet up</option>
             				<option value="Hackathon">Hackathon</option>
@@ -50,48 +50,47 @@
         				</select> <br>
                     
                        <br><div class="date">
-                            <input type="date" id="uname" name="date" style="width: 340px"
+                            <input type="date" value="${eventUp.getDateEve()}" id="uname" name="date" style="width: 340px"
                             placeholder="Date"/><br><br>
                         </div> 
                         
                         <div class="heureDebut">
-                            <input type="text" required id="uname" name="heureDebut" style="width: 340px" placeholder="Heure de début"/><br><br>
+                            <input type="text" value="${eventUp.getHeureDebut()}" required id="uname" name="heureDebut" style="width: 340px" placeholder="Heure de début"/><br><br>
                         </div>
                         
                     
                        <div class="lieu">
-                            <input type="text" required id="uname" name="lieu" style="width: 340px" placeholder="Lieu"/><br><br>
+                            <input type="text" value="${eventUp.getLieu()}" required id="uname" name="lieu" style="width: 340px" placeholder="Lieu"/><br><br>
                         </div>
                         
                         <div class="Duree">
-                            <input type="text" required id="uname" name="duree" style="width: 340px" placeholder="Durée approximative"/><br><br>
+                            <input type="text" value="${eventUp.getDuree()}" required id="uname" name="duree" style="width: 340px" placeholder="Durée approximative"/><br><br>
                         </div>                        
                         
                         <div class="nombreparticipants">
-                            <input type="text" required id="uname" name="capacite" style="width: 340px" placeholder="Nombre de participants"/><br><br>
+                            <input type="text" value="${eventUp.getCapMax()}" required id="uname" name="capacite" style="width: 340px" placeholder="Nombre de participants"/><br><br>
                         </div>
                         
                         <div class="montant">
-                            <input type="text" required id="uname" name="montant" style="width: 340px" placeholder="Montant souhaité"/><br><br>
+                            <input type="text" value="${eventUp.getMontantObjectif()}" required id="uname" name="montant" style="width: 340px" placeholder="Montant souhaité"/><br><br>
                         </div>
                         
                         <div class="textEve">
-                            <textarea name="textEve" required cols="42" rows="10"  placehoder = "Description"></textarea><br><br>
+                            <textarea name="textEve" value="${eventUp.getTextEve()}" required cols="42" rows="10"  placehoder = "Description">${eventUp.getTextEve()}</textarea><br><br>
                         </div>
                         
                         <div class="accesHandicape" required>
-                            <label for="uname"><h5>As tu besoin d'un accès handicapé ?
+                            <label for="uname">As tu besoin d'un accès handicapé ?
                             <input type="radio" id="uname" name="accesHandicape" value="oui"/>Oui
-                            <input type="radio" id="uname" name="accesHandicape" value="non"/>Non</h5><br>
+                            <input type="radio" id="uname" name="accesHandicape" value="non"/>Non<br>
 							</label>
                         </div>
                                               
                         <div class="image">
-                            <input type="file" id="uname" name="urlImage" style="width: 340px" placeholder="Url de l'image"/><br><br>
+                            <input type="text" value="${eventUp.getImage()}" id="uname" name="urlImage" style="width: 340px" placeholder="Url de l'image"/><br><br>
                     	</div>
-                    	
-                    	<input type="submit" style="background-color: #ff5c39" class="btn" value="Créer"/>
-                    	
+                    	<input id="id" name="idEvent" type="hidden" value="${eventUp.getId()}">
+                    	<input type="submit" style="background-color: #ff5c39" class="btn" value="Créer">
                     </table>
                 </form>
                 </div>
@@ -99,10 +98,12 @@
                 <div class="illustration">
                     <img src="" alt="Card image">
                 </div>   
-            </div>      
-            
+            </div>
+        
+            <hr>
+              <jsp:include page="Footer.jsp"></jsp:include>
           </div>
-         <jsp:include page="Footer.jsp"></jsp:include>   
+                
         </body>
         
     </html>

@@ -1,9 +1,10 @@
 package test;
 
-import java.util.Date;
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,51 +12,58 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import test.BeanEvent;
-import test.EventCrudDao;
 
-@WebServlet("/CreationEventsLet")
-public class CreationEventsLet extends HttpServlet {
+@WebServlet("/UpdateEventsLet2")
+
+public class UpdateEventsLet2 extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
-	public CreationEventsLet() {
+	public UpdateEventsLet2() {
+
 		super();
+
 		// TODO Auto-generated constructor stub
+
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		// TODO Auto-generated method stub
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		try {
+		// TODO Auto-generated method stub
 
-			// on récupère la session si elle existe encore
+		try { // on récupère la session si elle existe encore
+
 			HttpSession session = request.getSession(false);
 			if (session.getAttribute("idUser") == null) {
+
 				// si la session n'existe plus = false, ces attributs seront donc de valeur =
 				// null
 				// le cas échéant l'application vous raménera à la home page
 
 				RequestDispatcher rd = request.getRequestDispatcher("/Register.jsp");
+
 				rd.forward(request, response);
 
 			} else {
-
 				String dateEvent = request.getParameter("date");
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 				Date jour;
-
 				jour = format.parse(dateEvent);
 				java.sql.Date jourSql = new java.sql.Date(jour.getTime());
-			
 				System.out.println(jourSql);
 
 				String titre = request.getParameter("titre");
-				String type = request.getParameter("typeEve");
+				String type = request.getParameter("type");
 				String heuredebut = request.getParameter("heureDebut");
 				String lieu = request.getParameter("lieu");
 				String duree = request.getParameter("duree");
@@ -64,9 +72,12 @@ public class CreationEventsLet extends HttpServlet {
 				String description = request.getParameter("textEve");
 				String handi = request.getParameter("accesHandicape");
 				String urlImage = request.getParameter("urlImage");
-				int idCrea = (int) session.getAttribute("idUser");
+				int idcrea = (int) session.getAttribute("idUser");
+				int idEvent = Integer.parseInt(request.getParameter("idEvent"));
+
 				BeanEvent event = new BeanEvent();
 
+				event.setId(idEvent);
 				event.setTitre(titre);
 				event.setTypeEve(type);
 				System.out.println("avant set date");
@@ -80,31 +91,25 @@ public class CreationEventsLet extends HttpServlet {
 				event.setTextEve(description);
 				event.setAccesHandicap(handi);
 				event.setImage(urlImage);
-				event.setIdUser(idCrea);
+				event.setIdUser(idcrea);
 
-				EventCrudDao insertion = new EventCrudDao();
+				EventCrudDao update = new EventCrudDao();
 
-				int idEvent = insertion.addEvent(event);
-				
-				System.out.println("ça passe");
+				update.updateEvent(event);
 
-				if (idEvent > 0) {
+				request.setAttribute("idEvent", idEvent);
+				request.setAttribute("upTest",
+						"Félicitations! Vos informations on été prises en compte. Votre évènement est disponible.");
 
-					request.setAttribute("idEvent", idEvent);
-					request.setAttribute("ConfirmationCreationEvent", "L'événement a bien été enregistré");
-					RequestDispatcher rd = request.getRequestDispatcher("/UpdateEventsLet");
-					rd.forward(request, response);
+				RequestDispatcher rd = request.getRequestDispatcher("/UpdateEventsLet");
 
-				} else {
-					request.setAttribute("error", "erreur d'update");
-					RequestDispatcher rd = request.getRequestDispatcher("/CreationEvenement.jsp");
-					rd.forward(request, response);
-
-				}
+				rd.forward(request, response);
 			}
 
 		} catch (ParseException e) {
 			e.printStackTrace();
+
 		}
 	}
+
 }

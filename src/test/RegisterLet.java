@@ -65,6 +65,7 @@ public class RegisterLet extends HttpServlet {
 				
 			} else {
 				inscription.register(user);
+				request.setAttribute("idUser", user.getIdUser());
 				request.setAttribute("events", affichageEvents.allEvents());
 				this.getServletContext().getRequestDispatcher("/ListeEvenements.jsp").forward(request, response);
 				
@@ -74,7 +75,7 @@ public class RegisterLet extends HttpServlet {
 
 		} else {
 
-			request.setAttribute("errorPass", "Mots de passe non correspondants");
+			request.setAttribute("errorPass", "Les mots de passe ne sont pas identiques");
 			this.getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
 
 		}

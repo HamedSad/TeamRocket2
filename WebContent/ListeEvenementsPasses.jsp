@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="print.css" media="print">
 <link rel="icon" type="image/png"
 	href="http://image.noelshack.com/fichiers/2018/38/5/1537535762-logo.png" />
-<title>Nos prochains événements</title>
+<title>Nos événements passés</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 
 
 		<div class="titrelisteevenements">
-			<h1>Nos prochains événements</h1>
+			<h1>Nos événements passés</h1>
 		</div>
 
 		<div class="centrageimage">
@@ -65,13 +65,13 @@
 						</p>
 						<p class="card-text" name="lieu">
 							<c:out value="${event.getLieu()}" />
-						<form action="EventLet" method="post">
-							<input type="hidden" name="idEventPass" value="${event.getId()}" />
-							<p>
-								<button type="submit" style="background-color: #ff5c39"
-									class="btn" value="">En savoir plus</button>
-							</p>
-						</form>
+					<form action="EventLet" method="post">
+						<input type="hidden" name="idEventPass" value="${event.getId()}" />
+						<p>
+							<button type="submit" style="background-color: #ff5c39"
+								class="btn" value="">En savoir plus</button>
+						</p>
+					</form>
 						</p>
 					</div>
 					<div class="card-footer">
@@ -79,10 +79,10 @@
 								value="${event.getCapMax() - event.getNbreInscrits()}" /></small>
 					</div>
 
+
 				</div>
 			</c:forEach>
 		</div>
-
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
 
